@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Incluir el encabezado -->
+    <include src="header.html"></include>
+    <!-- Contenido de la página -->
+    <div class="container">
+        <h1>Tienda</h1>
+        <div id="store-container" class="card-deck">
+            <!-- Aquí se mostrarán los productos -->
+        </div>
+
+        <p>Total de la compra: <span id="total">$0.00</span></p>
+        <button onclick="finalizePurchase()" class="btn btn-success">Finalizar compra</button>
+
+        <button onclick="toggleCalculator()" class="btn btn-primary">Mostrar/Esconder Calculadora</button>
+        <!-- Calculadora básica -->
+        <h2>Calculadora</h2>
+        <form id="calculator" style="display:none;">
+            <input type="text" id="num1" placeholder="Número 1">
+            <select id="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <input type="text" id="num2" placeholder="Número 2">
+            <button type="button" onclick="calculate()">Calcular</button>
+            <input type="text" id="result" placeholder="Resultado" readonly>
+        </form>
+        <button onclick="window.history.back()" class="btn btn-primary">Regresar</button>
+    </div>
+    <!-- Scripts de Bootstrap y jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        let totalCompra = 0; // Variable para almacenar el total de la compra
+
+        function toggleCalculator() {
+            const calculator = document.getElementById('calculator');
+            if (calculator.style.display === 'none') {
+                calculator.style.display = 'block';
+            } else {
+                calculator.style.display = 'none';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const storeContainer = document.getElementById('store-container');
+
+            // Obtener la lista de productos del almacenamiento local
+            let products = JSON.parse(localStorage.getItem('products')) || [];
+
+            // Mostrar los productos en la tienda
+            products.forEach(function(product) {
+                const productCard = `
+                    <div class="card">
+                        <img src="${product.imagen}" class="card-img-top" alt="${product.nombre}">
+                        <div class="card-body">
+                            <h5 class="card-title">${product.nombre}</h5>
+                            <p class="card-text">${product.descripcion}</p>
+                            <p class="card-text">Precio: $${product.precio}</p>
+                            <button onclick="buyProduct('${product.id}', ${product.precio})" class="btn btn-primary">Comprar</button>
+                            <button onclick="removeProduct('${product.id}', ${product.precio})" class="btn btn-danger">Eliminar</button>
+                        </div>
+                    </div>
+                `;
+                storeContainer.innerHTML += productCard;
+            });
+        });
+
+        function calculate() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const operator = document.getElementById('operator').value;
+            let result;
+
+            switch (operator) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    result = num1 / num2;
+                    break;
+                default:
+                    result = 'Operador inválido';
+                    break;
+            }
+
+            document.getElementById('result').value = result;
+        }
+
+        function buyProduct(productId, precio) {
+            // Implementa la lógica para agregar el producto al carrito de compras
+            // Puedes utilizar localStorage para mantener un registro de los productos comprados
+            totalCompra += precio; // Sumar el precio del producto al total de la compra
+            alert('Producto comprado');
+            updateTotal(); // Actualizar el total en la página
+        }
+
+        function removeProduct(productId, precio) {
+            // Implementa la lógica para eliminar el producto del carrito de compras
+            // Puedes utilizar localStorage para mantener un registro de los productos comprados
+            totalCompra -= precio; // Restar el precio del producto al total de la compra
+            alert('Producto eliminado');
+            updateTotal(); // Actualizar el total en la página
+        }
+
+        function updateTotal() {
+            // Actualizar el elemento HTML que muestra el total de la compra
+            document.getElementById('total').innerText = `$${totalCompra.toFixed(2)}`;
+        }
+
+        function finalizePurchase() {
+            alert('Gracias por su compra');
+            // Puedes reiniciar el total de la compra u otros pasos relacionados con la finalización de la compra
+            totalCompra = 0;
+            updateTotal(); // Actualizar el total en la página
+        }
+    </script>
+</body>
+</html>
+
