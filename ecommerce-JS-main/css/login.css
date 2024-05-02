@@ -1,22 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+/* Importa la fuente Rubik desde Google Fonts con diferentes pesos */
 
 :root {
+    /* Definición de variables CSS para colores */
     --clr-main: #4b33a8;
     --clr-main-light: #785ce9;
     --clr-white: #ececec;
     --clr-gray: #e2e2e2;
     --clr-red: #961818;
 }
+/* Estilo para el placeholder de los inputs */
 ::placeholder{
     color: #b3a9db;
 }
 
+/* Estilos globales */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Rubik', sans-serif;
 }
+
+/* Estilos para el contenedor principal del formulario de inicio de sesión */
 .container-login{
     display: flex;
     flex-direction: column;
@@ -31,6 +37,7 @@
     gap: 180px;
 }
 
+/* Estilos para los inputs del formulario */
 input{
     outline: 0;
     background-color: var(--clr-main-light);
@@ -41,8 +48,9 @@ input{
     font-size: 14px;
     border-radius: 10px;
     color: #fff;
-    
 }
+
+/* Estilos para el botón de inicio de sesión */
 .boton{
     border-radius: 10px;
     text-transform: uppercase;
@@ -56,13 +64,14 @@ input{
     cursor: pointer;
     -webkit-transition:all 0.3 easy;
     transition: all 0.3 ease;
-    
-
 }
+
+/* Estilos para el botón de inicio de sesión al pasar el cursor */
 .boton:hover{
     background-color: #6f1dbd;
 }
 
+/* Estilos para el contenedor del formulario */
 .form-group{
     display: flex;
     flex-direction: column;
@@ -76,5 +85,14 @@ input{
     padding: 45px;
     text-align: center;
     box-shadow: 0 0 20px 0 rgba( 0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+}
 
+/* Estilos para el cuerpo de la página */
+body {
+    /* Fondo animado con un gif */
+    background-image: url('https://i.gifer.com/origin/3d/3d97995da7a025d3aa4e6be559b1418d_w200.gif');
+    background-size: 50%; /* Ajusta el tamaño según sea necesario */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center bottom; /* Ajusta la posición vertical */
 }
