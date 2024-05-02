@@ -191,16 +191,16 @@ const botonesCategorias = document.querySelectorAll(".boton-categoria");
 const tituloPrincipal =document.querySelector("#titulo-principal");
 let botonesAgregar = document.querySelectorAll(".producto-agregar");
 const numerito = document.querySelector("#numerito");
-
-function cargarProductos(productosElegidos){
+// Función para cargar los productos en la página
+function cargarProductos(productosElegidos) {
     contenedorProductos.innerHTML = "";
 
     productosElegidos.forEach(producto => {
-
+        // Crear elementos HTML para mostrar cada producto
         const div = document.createElement("div");
         div.classList.add("producto");
         div.innerHTML = `
-            <img class="producto-imagen" src="${producto.imagen}" alt=""${producto.titulo}"">
+            <img class="producto-imagen" src="${producto.imagen}" alt="${producto.titulo}">
             <div class="producto-detalles">
                     <h3 class="producto-titulo">${producto.titulo}</h3>
                     <p class="producto-precio">${producto.precio}</p>
@@ -209,132 +209,110 @@ function cargarProductos(productosElegidos){
         `;
 
         contenedorProductos.append(div);
-    })
+    });
+
     actualizarBotonesAgregar();
 }
+
+// Cargar todos los productos al inicio
 cargarProductos(productos);
 
-/*Llamamos a todos los botones categorias */
-botonesCategorias.forEach(boton =>{
-    boton.addEventListener("click", (e) => {
-
-        botonesCategorias.forEach(boton => boton.classList.remove("active"));
-
-        e.currentTarget.classList.add("active");
-
-        if(e.currentTarget.id != "todos"){
-            const productoCategoria = productos.find(producto => producto.categoria.id === e.currentTarget.id);
-            tituloPrincipal.innerText = productoCategoria.categoria.nombre;
-
-            const productosBoton = productos.filter(producto => producto.categoria.id === e.currentTarget.id);
-            cargarProductos(productosBoton);
-        } else{
-            tituloPrincipal.innerText = "Todos los productos";
-            cargarProductos(productos);
-
-        }      
-    })
-});
-
-function actualizarBotonesAgregar(){
+// Función para actualizar los botones de agregar al carrito
+function actualizarBotonesAgregar() {
     botonesAgregar = document.querySelectorAll(".producto-agregar");
 
-    botonesAgregar.forEach( boton=> {
+    botonesAgregar.forEach(boton => {
         boton.addEventListener("click", agregarAlCarrito);
-
     });
 }
 
-
+// Inicializar arreglo de productos en el carrito desde localStorage o vacío si no existe
 let productosEnCarrito;
-
 let productosEnCarritoLS = localStorage.getItem("productos-en-carrito");
 
-
-if(productosEnCarritoLS){
+if (productosEnCarritoLS) {
     productosEnCarrito = JSON.parse(productosEnCarritoLS);
     actualizarNumerito();
-
-}else{
+} else {
     productosEnCarrito = [];
 }
 
-
-
-
-
-function agregarAlCarrito(e){
+// Función para agregar un producto al carrito
+function agregarAlCarrito(e) {
     const idBoton = e.currentTarget.id;
     const productoAgregado = productos.find(producto => producto.id === idBoton);
 
-    if(productosEnCarrito.some(producto => producto.id === idBoton)){
+    if (productosEnCarrito.some(producto => producto.id === idBoton)) {
         const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
         productosEnCarrito[index].cantidad++;
-
-    }else{
+    } else {
         productoAgregado.cantidad = 1;
         productosEnCarrito.push(productoAgregado);
     }
 
     actualizarNumerito();
-
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
 }
 
-/*ACTUALIZAR NUMERITO */
-function actualizarNumerito(){
+// Función para actualizar el número en el ícono del carrito
+function actualizarNumerito() {
     let nuevoNumerito = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
     numerito.innerText = nuevoNumerito;
-    
 }
 
+// Evento al hacer clic en un botón de categoría para filtrar los productos
+botonesCategorias.forEach(boton => {
+    boton.addEventListener("click", (e) => {
+        // Remover la clase 'active' de todos los botones de categoría
+        botonesCategorias.forEach(boton => boton.classList.remove("active"));
+        // Agregar la clase 'active' al botón clickeado
+        e.currentTarget.classList.add("active");
 
+        // Filtrar los productos por categoría
+        if (e.currentTarget.id != "todos") {
+            const productoCategoria = productos.find(producto => producto.categoria.id === e.currentTarget.id);
+            tituloPrincipal.innerText = productoCategoria.categoria.nombre;
+            const productosBoton = productos.filter(producto => producto.categoria.id === e.currentTarget.id);
+            cargarProductos(productosBoton);
+        } else {
+            tituloPrincipal.innerText = "Todos los productos";
+            cargarProductos(productos);
+        }
+    });
+});
 
-
-
-
-
-/*Aquí añadiremos la function del login */
+// Función para gestionar el login
 function login() {
     var user, password;
-
-    user =  document.getElementById("usuario").value;
+    user = document.getElementById("usuario").value;
     password = document.getElementById("contrasena").value;
 
-    if(user == "admin" && password == "admin"){
+    if (user == "admin" && password == "admin") {
         localStorage.setItem("tipoUsuario", "admin");
-        window.location="index.html";
-
+        window.location = "index.html";
     } else if (user == "cliente" && password == "cliente") {
         localStorage.setItem("tipoUsuario", "cliente");
-        window.location="index.html";
-
+        window.location = "index.html";
     } else {
-        alert("La contraseña o usuario es incorrecto")
+        alert("La contraseña o usuario es incorrecto");
     }
 }
 
-
+// Evento al hacer clic en el botón de logout
 document.getElementById("logout").addEventListener("click", function() {
     localStorage.removeItem("tipoUsuario");
     window.location = "login.html";
 });
 
-
-
-
-
-
-
-
-
+// Verificar si el usuario está logueado al cargar la página
 document.addEventListener("DOMContentLoaded", function() {
     const tipoUsuario = localStorage.getItem("tipoUsuario");
-
-    if (tipoUsuario) {
-        const header = document.querySelector("header");
-        const userName = document.createElement("p");
-        userName.innerText = `Usuario: ${tipoUsuario}`;
-        header.appendChild(userName);
+    if (!tipoUsuario || (tipoUsuario !== "admin" && tipoUsuario !== "cliente")) {
+        window.location = "login.html";
     }
+});
+
+// Redirección a la calculadora
+document.getElementById("calculadora").addEventListener("click", function() {
+    window.location.href = "CALCULADORA.html";
 });
