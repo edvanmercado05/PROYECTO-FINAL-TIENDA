@@ -33,7 +33,7 @@ Este proyecto es un ejemplo de un eCommerce desarrollado en JavaScript para Spor
 
 1. Clona o descarga el repositorio.
 2. Abre el archivo `index.html` en tu navegador para empezar a usar la aplicación.
-3. Para probar la funcionalidad de inicio de sesión, abre el archivo `login.html` e ingresa las credenciales de prueba (Usuario: `prueba`, Contraseña: `123456`).
+3. Para probar la funcionalidad de inicio de sesión, abre el archivo `login.html` e ingresa las credenciales de prueba (Usuario: `admin`, Contraseña: `admin` o Usuario: `cliente`, Contraseña: `cliente`).
 
 ### Notas
 
