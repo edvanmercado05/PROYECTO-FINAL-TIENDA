@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --clr-main: #4b33a8;
+    --clr-main-light: #785ce9;
+    --clr-white: #ececec;
+    --clr-gray: #e2e2e2;
+    --clr-red: #961818;
+}
+::placeholder{
+    color: #b3a9db;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+.container-login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(/img/fondo_login.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    gap: 180px;
+}
+
+input{
+    outline: 0;
+    background-color: var(--clr-main-light);
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px ;
+    font-size: 14px;
+    border-radius: 10px;
+    color: #fff;
+    
+}
+.boton{
+    border-radius: 10px;
+    text-transform: uppercase;
+    outline: 0;
+    background-color: var(--clr-main);
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    -webkit-transition:all 0.3 easy;
+    transition: all 0.3 ease;
+    
+
+}
+.boton:hover{
+    background-color: #6f1dbd;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    background-color: #ffffff27;
+    border-radius: 10px;
+    max-width: 360px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba( 0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+
+}
