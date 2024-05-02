@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+/* Importa la fuente Rubik desde Google Fonts con diferentes pesos */
 
 :root {
+    /* Definición de variables CSS para colores */
     --clr-main: #4b33a8;
     --clr-main-light: #785ce9;
     --clr-white: #ececec;
@@ -8,6 +10,7 @@
     --clr-red: #961818;
 }
 
+/* Estilos globales */
 * {
     margin: 0;
     padding: 0;
@@ -15,44 +18,55 @@
     font-family: 'Rubik', sans-serif;
 }
 
+/* Estilos para elementos de texto y enlaces */
 h1, h2, h3, h4, h5, h6, p, a, input, textarea {
     margin: 0;
 }
 
+/* Estilos para listas */
 ul {
     list-style-type: none;
 }
 
+/* Estilos para enlaces */
 a {
     text-decoration: none;
 }
 
+/* Estilos para el contenedor principal */
 .wrapper{
     display: grid;
     grid-template-columns: 2fr 4fr;
     background-color: var(--clr-main);
 }
+
+/* Estilos para el aside (menú lateral) */
 aside{
     padding: 2rem;
     padding-right: 0;
-    color: var(--clr-white);position: sticky;
-    top:0;
+    color: var(--clr-white);
+    position: sticky;
+    top: 0;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
+
+/* Estilos para el logo */
 .logo{
     font-weight: 400;
     font-size: 1.3rem;
 }
 
+/* Estilos para el menú */
 .menu{
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
+/* Estilos para botones de menú */
 .boton-menu{
     background-color: transparent;
     border: 0;
@@ -65,9 +79,9 @@ aside{
     padding: 1rem;
     font-size: .85rem;
     width: 100%;
-
 }
 
+/* Estilos para botones de menú activos */
 .boton-menu.active{
     background-color: var(--clr-white);
     color: var(--clr-main);
@@ -77,6 +91,7 @@ aside{
     position: relative;
 }
 
+/* Estilos para la indicación de botón de menú activo */
 .boton-menu.boton-menu.active::before{
     content:'A';
     position: absolute;
@@ -89,6 +104,7 @@ aside{
     box-shadow: 0 1rem 0px var(--clr-white);
 }
 
+/* Estilos para la indicación de botón de menú activo */
 .boton-menu.boton-menu.active::after{
     content:'A';
     position: absolute;
@@ -101,10 +117,12 @@ aside{
     box-shadow: 0 -1rem 0px var(--clr-white);
 }
 
+/* Estilos para el botón del carrito */
 .boton-carrito{
     margin-top: 2rem;
 }
 
+/* Estilos para el contador del carrito */
 .numerito{
     background-color: var(--clr-white);
     color: var(--clr-main);
@@ -112,23 +130,25 @@ aside{
     border-radius: 0.25rem;
 }
 
+/* Estilos para el contador del carrito cuando está activo */
 .boton-carrito.active .numerito{
     background-color: var(--clr-main);
     color: var(--clr-white);
-
 }
 
+/* Estilos para iconos */
 i.bi-hand-index-thumb-fill,
 i.bi-hand-index-thumb{
     transform: rotateZ(90deg);
-
 }
 
+/* Estilos para el footer */
 .texto-footer{
     color: var(--clr-main-light);
     font-size: .85rem;
 }
 
+/* Estilos para el contenido principal */
 main{
     background-color: var(--clr-white);
     margin: 1rem;
@@ -137,22 +157,26 @@ main{
     padding: 3rem;
 }
 
+/* Estilos para el título principal */
 .titulo-principal{
     color: var(--clr-main);
     margin-bottom: 2rem;
 }
 
+/* Estilos para el contenedor de productos */
 .contenedor-productos{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
 }
 
+/* Estilos para la imagen del producto */
 .producto-imagen{
     max-width: 100%;
     border-radius: 1rem;
 }
 
+/* Estilos para los detalles del producto */
 .producto-detalles{
     background-color: var(--clr-main);
     color: var(--clr-white);
@@ -165,9 +189,12 @@ main{
     gap: .25rem;
 }
 
+/* Estilos para el título del producto */
 .producto-titulo{
     font-size: 1rem;
 }
+
+/* Estilos para el botón de agregar al carrito */
 .producto-agregar{
     border:0;
     background-color: var(--clr-white);
@@ -180,30 +207,33 @@ main{
     transition: background-color .2s, color 2s;
 }
 
+/* Estilos para el botón de agregar al carrito al pasar el cursor */
 .producto-agregar:hover{
     background-color: var(--clr-main);
     color: var(--clr-white);
 }
 
-/**CARRITO**/
+/* Estilos para el contenedor del carrito */
 .contenedor-carrito{
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
+/* Estilos para mensajes de carrito vacío o comprado */
 .carrito-vacio,
 .carrito-comprado{
     color: var(--clr-main);
-
 }
 
+/* Estilos para la lista de productos en el carrito */
 .carrito-productos{
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
+/* Estilos para un producto en la lista del carrito */
 .carrito-producto{
     display: flex;
     justify-content: space-between;
@@ -213,19 +243,20 @@ main{
     padding-right: 1.5rem;
     border-radius: 1rem;
     align-items: center;
-    
-
 }
 
+/* Estilos para la imagen de un producto en el carrito */
 .carrito-producto-imagen{
     width: 4rem;
     border-radius: 1rem;
 }
 
+/* Estilos para detalles adicionales de un producto en el carrito */
 .carrito-producto small{
     font-size: .75rem;
 }
 
+/* Estilos para el botón de eliminar un producto del carrito */
 .carrito-producto-eliminar{
     border: 0;
     background-color: transparent;
@@ -233,11 +264,13 @@ main{
     cursor: pointer;
 }
 
+/* Estilos para las acciones del carrito */
 .carrito-acciones{
     display:flex;
     justify-content:  space-between;
 }
 
+/* Estilos para el botón de vaciar el carrito */
 .carrito-acciones-vaciar{
     border: 0;
     background-color: var(--clr-gray);
@@ -248,10 +281,12 @@ main{
     cursor: pointer;
 }
 
+/* Estilos para la sección de acciones a la derecha del carrito */
 .carrito-acciones-derecha{
     display: flex;
 }
 
+/* Estilos para el total de la compra en el carrito */
 .carrito-acciones-total{
     display: flex;
     background-color: var(--clr-gray);
@@ -261,10 +296,9 @@ main{
     color: var(--clr-main);
     text-transform: uppercase;
     cursor: pointer;
-    
-
 }
 
+/* Estilos para el botón de comprar en el carrito */
 .carrito-acciones-comprar{
     border: 0;
     background-color: var(--clr-main);
@@ -276,6 +310,7 @@ main{
     cursor: pointer;
 }
 
+/* Estilos para elementos deshabilitados (ocultos) */
 .disabled{
     display: none;
 }
