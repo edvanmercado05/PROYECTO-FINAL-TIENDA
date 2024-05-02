@@ -5,15 +5,16 @@ EDVAN DANIEL MERCADO LAMAS 20490721
 
 Tienda en línea de ropa
 
-## eCommerce Sport Center Líder
+# Tienda en Línea de EDVAN STORE
+Este proyecto es una tienda en línea desarrollada con HTML, CSS, Bootstrap y JavaScript para el curso de Desarrollo Web Avanzado. La tienda ofrece una variedad de productos de moda para hombres y mujeres, con funcionalidades de navegación, selección y compra de productos.
 
-Este proyecto es un ejemplo de un eCommerce desarrollado en JavaScript para Sport Center Líder. Permite a los usuarios ver productos, agregarlos al carrito, ver el total de la compra y eliminar productos del carrito.
+# Características
+Diseño Responsivo: La tienda es compatible con dispositivos móviles y de escritorio, adaptándose a diferentes tamaños de pantalla.
+Catálogo de Productos: Los usuarios pueden explorar diferentes categorías de productos, como abrigos, camisetas y pantalones.
+Carrito de Compras: Los usuarios pueden agregar productos al carrito de compras, ver el total de la compra y proceder al pago.
+Inicio de Sesión: Los usuarios pueden iniciar sesión como cliente para acceder a funcionalidades adicionales, como ver el historial de compras.
+Administración de Productos: Los administradores pueden agregar, editar y eliminar productos del catálogo.
 
-### Páginas del proyecto
-
-- **index.html**: Página principal que muestra todos los productos disponibles para la venta. Los usuarios pueden navegar por diferentes categorías de productos y agregar productos al carrito.
-- **login.html**: Página de inicio de sesión donde los usuarios pueden ingresar sus credenciales para acceder al sitio.
-- **carrito.html**: Página que muestra los productos agregados al carrito, permite al usuario eliminar productos y finalizar la compra.
 
 ### Funcionalidades
 
@@ -29,11 +30,13 @@ Este proyecto es un ejemplo de un eCommerce desarrollado en JavaScript para Spor
 - JavaScript
 - Bootstrap Icons
 
-### Instalación y uso
-
-1. Clona o descarga el repositorio.
-2. Abre el archivo `index.html` en tu navegador para empezar a usar la aplicación.
-3. Para probar la funcionalidad de inicio de sesión, abre el archivo `login.html` e ingresa las credenciales de prueba (Usuario: `admin`, Contraseña: `admin` o Usuario: `cliente`, Contraseña: `cliente`).
+# Uso
+Explora el catálogo de productos y selecciona los productos que deseas comprar.
+Agrega productos al carrito de compras haciendo clic en el botón "Agregar al Carrito".
+Ve el total de la compra en el carrito de compras y procede al pago.
+Inicia sesión como cliente para ver tu historial de compras y gestionar tu cuenta.
+-Abre el archivo `index.html` en tu navegador para empezar a usar la aplicación.
+- Para probar la funcionalidad de inicio de sesión, abre el archivo `login.html` e ingresa las credenciales de prueba (Usuario: `admin`, Contraseña: `admin` o Usuario: `cliente`, Contraseña: `cliente`).
 
 ### Notas
 
