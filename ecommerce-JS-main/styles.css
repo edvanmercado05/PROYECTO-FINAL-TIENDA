@@ -1,0 +1,67 @@
+* {
+    margin: 0; /* Elimina el margen predeterminado de todos los elementos */
+    padding: 0; /* Elimina el relleno predeterminado de todos los elementos */
+    box-sizing: border-box; /* Hace que el tamaño de los elementos incluya el padding y el borde */
+    font-family: sans-serif; /* Establece la familia de fuentes predeterminada para todo el documento */
+}
+
+body {
+    min-height: 100vh; /* Establece la altura mínima del cuerpo al 100% del viewport height */
+    background-color: #ffffff; /* Establece el color de fondo del cuerpo en blanco */
+    display: grid; /* Usa el sistema de layout de cuadrícula */
+    place-items: center; /* Centra el contenido vertical y horizontalmente dentro del cuerpo */
+}
+
+.calculadora {
+    background-color: #000dff; /* Establece el color de fondo de la calculadora en azul oscuro */
+    color: rgb(255, 255, 255); /* Establece el color del texto en blanco */
+    width: 350px; /* Establece el ancho de la calculadora en 350px */
+    max-width: 100%; /* Establece el ancho máximo de la calculadora al 100% del contenedor */
+    padding: 1.5rem; /* Añade relleno alrededor de la calculadora */
+    border-radius: 1rem; /* Añade esquinas redondeadas a la calculadora */
+    display: grid; /* Usa el sistema de layout de cuadrícula */
+    grid-template-columns: repeat(4, 1fr); /* Crea una cuadrícula de 4 columnas con el mismo ancho */
+    gap: .5rem; /* Establece el espacio entre las filas y columnas de la cuadrícula */
+}
+
+.pantalla {
+    grid-column: 1 / -1; /* Hace que la pantalla ocupe todas las columnas disponibles */
+    background-color: #090c31; /* Establece el color de fondo de la pantalla en azul oscuro */
+    padding: 1.5rem; /* Añade relleno alrededor de la pantalla */
+    font-size: 2rem; /* Establece el tamaño de la fuente en 2rem */
+    text-align: right; /* Alinea el texto a la derecha en la pantalla */
+    border-radius: .5rem; /* Añade esquinas redondeadas a la pantalla */
+    margin-bottom: 1rem; /* Añade margen en la parte inferior de la pantalla */
+    font-family: monospace; /* Establece la familia de fuentes de la pantalla como monoespaciada */
+    font-weight: 900; /* Establece el peso de la fuente en negrita */
+}
+
+.btn {
+    background-color: #15173c; /* Establece el color de fondo de los botones en azul oscuro */
+    color: white; /* Establece el color del texto en blanco */
+    border: 0; /* Elimina el borde de los botones */
+    padding: 1.5rem .5rem; /* Añade relleno vertical y horizontal a los botones */
+    display: flex; /* Hace que el contenido de los botones se alinee en una línea */
+    justify-content: center; /* Centra horizontalmente el contenido de los botones */
+    align-items: center; /* Centra verticalmente el contenido de los botones */
+    border-radius: .5rem; /* Añade esquinas redondeadas a los botones */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar sobre los botones */
+}
+
+.btn:hover {
+    background-color: #ffffff; /* Cambia el color de fondo de los botones a blanco al pasar sobre ellos */
+}
+
+#cero {
+    grid-column: span 2; /* Hace que el botón cero ocupe dos columnas en la cuadrícula */
+}
+
+#igual {
+    grid-row: span 2; /* Hace que el botón igual ocupe dos filas en la cuadrícula */
+    background-color: #066d14; /* Establece el color de fondo del botón igual en verde oscuro */
+}
+
+
+#igual:hover {
+    background-color: #ffffff; /* Cambia el color de fondo del botón igual a verde claro al pasar sobre él */
+}
