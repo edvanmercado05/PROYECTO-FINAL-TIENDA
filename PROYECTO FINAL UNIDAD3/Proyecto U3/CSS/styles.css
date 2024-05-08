@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url('https://us.123rf.com/450wm/redicka/redicka1410/redicka141000095/32216620-sin-fisuras-patr%C3%B3n-geom%C3%A9trico-negro-para-su-dise%C3%B1o-de-portada-dise%C3%B1o-de-libros-fondo-del-sitio.jpg');
+    background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen en el fondo */
+    position: relative; /* Establece una posición relativa para el body */
+}
+
+.gif-container {
+    position: absolute; /* Establece una posición absoluta para el contenedor del GIF */
+    left: 200px; /* Coloca el contenedor del GIF a 10px del borde izquierdo */
+    top: 50%; /* Alinea el contenedor del GIF en la mitad vertical */
+    transform: translateY(-50%); /* Ajusta la posición vertical para centrar el contenedor del GIF */
+}
+
+.gif-container img {
+    max-width: 200%; /* Ajusta el tamaño máximo del GIF */
+}
+
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    text-align: center;
+    padding: 20px 25px;
+    box-shadow: 0px 5px 10px rgba(71, 3, 6, 0.7);
+}
+
+form .titulo{
+    color: #fcf9f9;
+    border: none;
+    background: radial-gradient(circle, #000000, #f3f3f1); /* Degradado circular de negro a dorado */
+    background-size: 100% 50%; /* Ajusta el tamaño del degradado al tamaño del botón */
+    padding: 5px; 
+    border-radius: 1000px;
+    margin-top: 10px;
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    font-size: 1.2em; /* Ajusta el tamaño de la fuente */
+}
+
+form label{
+    margin-bottom: 35px;
+}
+
+form label .fa-solid{
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    margin-right: 10px;
+}
+
+form label input{
+    outline: none;
+    border: none;
+    color: #252525;
+    border-bottom: solid 1px rgb(0, 0, 0);
+    padding: 0px 5px;
+    font-size: 18px;
+}
+
+form label input::placeholder{
+    color: rgba(37, 37, 37, 0.5);
+} 
+
+form .link{
+    color: #252525;
+    margin-bottom: 15px;
+}
+
+form button {
+    color: #fcf9f9;
+    border: none;
+    background: radial-gradient(circle, #000000, #ffd700); /* Degradado circular de negro a dorado */
+    background-size: 100% 100%; /* Ajusta el tamaño del degradado al tamaño del botón */
+    padding: 5px; 
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 10px;
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    font-size: 1.2em; /* Ajusta el tamaño de la fuente */
+}
+
+
+
+
+

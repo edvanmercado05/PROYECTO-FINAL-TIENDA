@@ -1,0 +1,384 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* Estilos para el encabezado */
+header {
+    display: flex; /* Utiliza el modelo de caja flexible para los elementos hijos */
+    height: 90px; /* Establece la altura del encabezado */
+    background: linear-gradient(to right, #000000, #888888); /* Crea un degradado de negro a gris */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos del encabezado */
+    padding: 10px; /* Añade un espacio interno de 10px alrededor del encabezado */
+    align-items: center; /* Centra verticalmente los elementos dentro del encabezado */
+}
+
+/* Estilos para los botones dentro del encabezado */
+header button {
+    background: none; /* Elimina el fondo de los botones */
+}
+
+/* Estilos para el logo */
+.logo {
+    display: flex; /* Utiliza el modelo de caja flexible para los elementos hijos */
+    align-items: center; /* Centra verticalmente los elementos dentro del logo */
+}
+
+/* Estilos para la imagen del logo */
+.logo img {
+    height: 75px; /* Establece la altura de la imagen del logo */
+}
+
+/* Estilos para el texto del encabezado */
+header h2 {
+    color: hsl(0, 0%, 100%); /* Establece el color del texto en blanco */
+}
+
+/* Estilos para los enlaces dentro del encabezado */
+header a {
+    color: rgb(255, 255, 255); /* Establece el color del texto en blanco */
+    padding: 10px; /* Añade un espacio interno de 10px alrededor de los enlaces */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+}
+
+button {
+    color: #fcf9f9;
+    border: none;
+    background: radial-gradient(circle, #000000, #ffd700); /* Degradado circular de negro a dorado */
+    background-size: 100% 100%; /* Ajusta el tamaño del degradado al tamaño del botón */
+    padding: 5px; 
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 10px;
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    font-size: 1.2em; /* Ajusta el tamaño de la fuente */
+}
+
+
+/* Estilos para el contenedor del catálogo */
+#catalogo {
+    display: flex;
+    flex-wrap: wrap; /* Envolverá los elementos en filas */
+    justify-content: space-around; /* Distribuirá uniformemente las tarjetas */
+    padding: 20px;
+}
+
+/* Estilos para las tarjetas de productos */
+#catalogo .card {
+    width: calc(33.33% - 45px); /* Ancho de cada tarjeta (3 tarjetas por fila) */
+    margin: 20px; /* Espacio entre las tarjetas */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Estilos adicionales para las imágenes de los productos */
+#catalogo .card img {
+    max-width: 80%;
+    height: 300px;
+    margin-bottom: 10px;
+    box-shadow: 0px 5px 10px rgba(3, 3, 6, 0.7);   
+}
+
+
+
+
+
+
+#catalogo{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    justify-content: center;
+}
+
+#catalogo img{
+    height: 300px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 5px 10px rgba(3, 3, 6, 0.7);   
+    margin-left: 40px;
+}
+
+#catalogo h3{
+    margin-left: 30px;
+    font-size: 15px;
+}
+
+@media (max-width: 767px){
+
+    main{
+        display: flex;
+        flex-direction: column;
+    }  
+    section{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #finalizar-compra{
+        display: flex;
+        flex-direction: column;
+        font-size: 20px;
+        margin: auto;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 990px){
+    main{
+        display: flex;
+        flex-direction: column;
+    }  
+    section{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #finalizar-compra{
+        display: flex;
+        flex-direction: column;
+        font-size: 20px;
+        margin: auto;
+    }
+}
+
+/*CRUD------------ */
+
+.div-titulo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-titulo h1{
+    font-weight: 300;
+}
+
+.contenedor{
+    width: 100%;
+    height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column; /* Cambia la dirección de los elementos a columna */
+    justify-content: center;
+    align-items: center;
+}
+
+/* creador de usuarios*/
+.contenedor .div-formulario {
+    width: 30%;
+    height: 250px;
+    margin: 15px;
+    background-color: rgb(71, 71, 71);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 5px 50px rgb(7, 105, 24);
+}
+
+.contenedor .div-formulario form input {
+    display: flex;
+    flex-direction: column;
+    outline: none;
+    border: none;
+    color: #000000;
+    border-bottom: solid 1px rgb(0, 136, 11);
+    padding: 10px;
+    font-size: 15px;
+}
+
+/* muestra usuarios creados */
+.contenedor .div-listado {
+    width: 55%;
+    height: calc(100% - 50px);
+    margin: 15px;
+    background-color: rgb(252, 252, 252);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 5px 50px rgba(7, 105, 24);
+}
+
+.contenedor .div-listado h2 {
+    margin-top: 10px;
+    font-weight: 300;
+    font-size: 2em;
+    color: rgb(255, 255, 255);
+}
+
+.contenedor .div-listado .div-usuarios {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+    padding: 0 30px;
+}
+
+.contenedor .div-listado .div-titulo p {
+    margin: 10px 0;
+    font-size: 1em;
+    color: black;
+}
+
+hr {
+    width: 100%;
+    height: 1px;
+}
+
+
+/*ACERCA------------------------------------------------*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: #000000;
+}
+
+.acerca {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo-img {
+    width: 80px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.logo-nombre {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+nav button {
+    background-color: #ffffff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    text-transform: uppercase;
+}
+
+#acerca {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#acerca img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#acercap {
+    text-align: justify;
+}
+
+#acercap p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+
+
+
+
+
+
+
+#inicio {
+    background-image: url('https://i.pinimg.com/originals/35/47/64/354764d6400a7203076af860dc572f4a.jpg');
+    background-repeat: no-repeat; /* Esto evita que la imagen se repita */
+    background-size: cover; /* Esto ajustará la imagen para cubrir todo el fondo */
+    background-position: center center; /* Esto centrará la imagen en el fondo */
+    height: 100vh; /* Esto establece la altura del elemento al 100% del tamaño de la ventana */
+}
+
+
+body {
+    background-color: #4241419c; /* Color gris */
+}
+
+
+#usuario-info {
+    font-size: 14px;
+    color: #333;
+    margin-right: 20px;
+}
+
+
+
+/*----------tICKETS--------*/
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+#ticket {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: relative; /* Para que el contenedor del GIF sea relativo a este elemento */
+}
+
+.gif-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.gif-container img {
+    max-width: 100px; /* Ajusta el tamaño del GIF según tus necesidades */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
